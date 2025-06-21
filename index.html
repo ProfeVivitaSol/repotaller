@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alex - Software Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+    html {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+        font-feature-settings: "cv02","cv03","cv04","cv11";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+        font-family: inherit;
+    }
+</style>
+</head>
+<body class="bg-gray-100">
+<header class="bg-white shadow-md sticky top-0 z-50">
+<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+<div class="text-2xl font-bold text-gray-800">Vivita Sol</div>
+<div class="hidden md:flex items-center space-x-2">
+    <a class="px-4 py-2 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition duration-200" href="#about">Acerca de Mi</a>
+    <a class="px-4 py-2 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition duration-200" href="#skills">Habilidades</a>
+    <a class="px-4 py-2 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition duration-200" href="#education">Educación</a>
+    <a class="px-4 py-2 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition duration-200" href="#projects">Proyectos</a>
+    <a class="px-4 py-2 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition duration-200" href="#links">Redes</a>
+    <a class="px-4 py-2 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition duration-200" href="#contact">Contacto</a>
+    
+</div>
+<!-- Mobile menu button -->
+<div class="md:hidden flex items-center">
+    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-700 focus:outline-none">
+        <span class="material-icons text-3xl">menu</span>
+    </button>
+</div>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-white shadow-2xl rounded-b-2xl z-40 hidden animate-fade-in-down">
+    <div class="flex justify-end px-6 pt-4">
+        <button id="mobile-menu-close" class="text-gray-500 hover:text-blue-700 focus:outline-none">
+            <span class="material-icons text-3xl">close</span>
+        </button>
+    </div>
+    <nav class="flex flex-col py-2 space-y-1">
+        <a class="mx-4 my-1 px-6 py-3 rounded-xl text-gray-700 font-semibold text-lg hover:bg-blue-100 hover:text-blue-700 transition-all duration-200 shadow-sm" href="#about">
+            <span class="material-icons align-middle mr-2 text-blue-400">person</span>Acerca de Mí
+        </a>
+        <a class="mx-4 my-1 px-6 py-3 rounded-xl text-gray-700 font-semibold text-lg hover:bg-blue-100 hover:text-blue-700 transition-all duration-200 shadow-sm" href="#skills">
+            <span class="material-icons align-middle mr-2 text-green-400">build</span>Habilidades
+        </a>
+        <a class="mx-4 my-1 px-6 py-3 rounded-xl text-gray-700 font-semibold text-lg hover:bg-blue-100 hover:text-blue-700 transition-all duration-200 shadow-sm" href="#education">
+            <span class="material-icons align-middle mr-2 text-purple-400">school</span>Educación
+        </a>
+        <a class="mx-4 my-1 px-6 py-3 rounded-xl text-gray-700 font-semibold text-lg hover:bg-blue-100 hover:text-blue-700 transition-all duration-200 shadow-sm" href="#projects">
+            <span class="material-icons align-middle mr-2 text-red-400">work</span>Proyectos
+        </a>
+        <a class="mx-4 my-1 px-6 py-3 rounded-xl text-gray-700 font-semibold text-lg hover:bg-blue-100 hover:text-blue-700 transition-all duration-200 shadow-sm" href="#links">
+            <span class="material-icons align-middle mr-2 text-blue-500">link</span>Redes
+        </a>
+        <a class="mx-4 my-1 px-6 py-3 rounded-xl text-gray-700 font-semibold text-lg hover:bg-blue-100 hover:text-blue-700 transition-all duration-200 shadow-sm" href="#contact">
+            <span class="material-icons align-middle mr-2 text-amber-400">mail</span>Contacto
+        </a>
+    </nav>
+</div>
+<style>
+@keyframes fade-in-down {
+  0% { opacity: 0; transform: translateY(-16px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+.animate-fade-in-down {
+  animation: fade-in-down 0.3s ease;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const menu = document.getElementById('mobile-menu');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+            menu.classList.add('hidden');
+        });
+    }
+});
+</script>
+<script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function () {
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', function () {
+            menu.classList.toggle('hidden');
+        });
+        // Optional: close menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+    });
+</script>
+</nav>
+</header>
+<main>
+<section class="relative bg-gradient-to-r from-rose-700 via-red-500 to-amber-400 text-white py-20 md:py-32">
+<div class="absolute inset-0">
+<img alt="Stylized illustration of Wonder Woman" class="object-cover w-full h-full opacity-30" src="img/mujermaravilla.png">
+</div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-3xl">
+<h1 class="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg tracking-tight" style="font-family: 'Inter', 'Segoe UI', Arial, sans-serif; letter-spacing: -0.03em;">
+    Hi, I'm <span class="text-amber-300">@VivitaSol</span>
+</h1>
+<p class="text-lg md:text-xl mb-8 leading-relaxed drop-shadow-md">
+                    Soy profesional del área de Tecnologías de la Información con experiencia en el desarrollo de soluciones digitales.
+                    Además, poseo una profunda vocación por la enseñanza, dedicándome a compartir conocimientos y promover el aprendizaje constante dentro del campo tecnológico.
+                    </p>
+<button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                        View my work
+                    </button>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white" id="about">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">About Me</h2>
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/3 mb-8 md:mb-0">
+<img alt="Alex smiling" class="rounded-full shadow-xl mx-auto w-64 h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGThATuIszD554bYgcEnwNTGNX3j6jYZctwgIDi6ccYbzbjVF1foLWgt4qglg40gGtZBgv2JXWF5KBxjNn4-pkmDygRDpeEmkks-0OhOe9bPZNwrsJCdqOOFxF5EEUpG0e2nG1Fimj4s4kAn5rAsPkQLIfd5buplErjsOKZFsT4mxiaAbLrNJlTREKUbeyFJLjIetWhMXbO1PfeLV_dzF6mPtxlfrOnaXPUq2tvpXODSqgzaFgZnMqZQPdU5sHLeziPLn8-HOtSRwA"/>
+</div>
+<div class="md:w-2/3 md:pl-12">
+<p class="text-gray-700 leading-relaxed mb-4">
+                            Hello! I'm VivitaSol, a passionate and creative software engineer with a knack for turning complex problems into elegant solutions. With several years of experience in the tech industry, I've honed my skills in full-stack development, always striving for clean, efficient, and scalable code.
+                        </p>
+<p class="text-gray-700 leading-relaxed mb-4">
+                            My journey into software engineering began with a fascination for how technology shapes our world. This curiosity has driven me to continuously learn and adapt to new technologies and methodologies. I thrive in collaborative environments and enjoy working with teams to bring innovative ideas to life.
+                        </p>
+<p class="text-gray-700 leading-relaxed">
+                            When I'm not coding, you can find me exploring the outdoors, experimenting with new recipes, or contributing to open-source projects. I believe in the power of technology to make a positive impact, and I'm always excited to take on new challenges.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-gray-50" id="skills">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Skills</h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<span class="material-icons text-5xl text-blue-500 mb-3">code</span>
+<h3 class="text-xl font-semibold text-gray-700">JavaScript</h3>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<span class="material-icons text-5xl text-green-500 mb-3">layers</span>
+<h3 class="text-xl font-semibold text-gray-700">React</h3>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<span class="material-icons text-5xl text-purple-500 mb-3">storage</span>
+<h3 class="text-xl font-semibold text-gray-700">Node.js</h3>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<span class="material-icons text-5xl text-red-500 mb-3">dns</span>
+<h3 class="text-xl font-semibold text-gray-700">Databases</h3>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<span class="material-icons text-5xl text-yellow-500 mb-3">cloud_queue</span>
+<h3 class="text-xl font-semibold text-gray-700">Cloud Services</h3>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white" id="education">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Education</h2>
+<div class="max-w-3xl mx-auto">
+<div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-8 hover:shadow-xl transition-shadow duration-300">
+<div class="flex items-center mb-4">
+<span class="material-icons text-3xl text-blue-600 mr-4">school</span>
+<div>
+<h3 class="text-2xl font-semibold text-gray-800">Master of Science in Computer Science</h3>
+<p class="text-gray-600">Stanford University | 2020 - 2022</p>
+</div>
+</div>
+<p class="text-gray-700 leading-relaxed">Specialized in Artificial Intelligence and Machine Learning. My thesis focused on developing a novel algorithm for natural language processing.</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+<div class="flex items-center mb-4">
+<span class="material-icons text-3xl text-blue-600 mr-4">school</span>
+<div>
+<h3 class="text-2xl font-semibold text-gray-800">Bachelor of Science in Software Engineering</h3>
+<p class="text-gray-600">University of California, Berkeley | 2016 - 2020</p>
+</div>
+</div>
+<p class="text-gray-700 leading-relaxed">Graduated with honors. Actively involved in the university's coding club and participated in several hackathons, winning Best Overall Project in 2019.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-gray-50" id="projects">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Projects</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+<img alt="Project 1" class="w-full h-56 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUQDL1NnRXbZiOq4ElQgFdXC41Y2tGP7we1OUFDQsLo4WDDqDolAkJvWsksCE3EDZCgMEtlduLcp7I9JeVHAMNqCUgFQPWjvFrYsTR6nOgLJCWjRpJv0eHtnwKgrfgMNODXe26oaZmGv_WmGkCvRbsNIdApvRc1FkMpYyFrkUaWeFUdd6f4MIRcUO5DdyGloyQPA7er2uoDad5Zcl09RNaCIpv9gTqmwZkUA-IN7E9vVa69_ZIicC3DBzs9adcpcE_Oy6LtQCPLzOO"/>
+<div class="p-6">
+<h3 class="text-2xl font-semibold text-gray-800 mb-2">E-commerce Platform</h3>
+<p class="text-gray-700 leading-relaxed mb-4">A full-stack e-commerce website built with React, Node.js, and MongoDB. Features user authentication, product listings, shopping cart, and payment integration.</p>
+<a class="inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300" href="#">View Project</a>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+<img alt="Project 2" class="w-full h-56 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcJ0yhEIGbiPqycjnA-Txq4_LyqSBVaBTsmj1NbhPSeTjKYn4giOA-kqS9ZuMxER7LzAxKleBTX7wGj5YdutHyyim4IfxPYb7VU7r0r5zuhgAjmragPbsm1JMce6SzPJgObUPV1MLc8o-E9gk4-l3CuHdu73xByELwNPK3l28H2Csls8nsN1QS27oogrdAEFI1ByT0AzQykSSPwLOZs2ggrzvjDKLNG4SFiixUVEQZTFtcX_7SELEOMKhKpmgL-o5mHSd2xogZD3gT"/>
+<div class="p-6">
+<h3 class="text-2xl font-semibold text-gray-800 mb-2">Task Management App</h3>
+<p class="text-gray-700 leading-relaxed mb-4">A responsive web application for managing tasks and projects, built using Vue.js and Firebase. Includes features like drag-and-drop, deadlines, and team collaboration.</p>
+<a class="inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300" href="#">View Project</a>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+<img alt="Project 3" class="w-full h-56 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDPX9npnXuUyfZPWHGzGaRp4N5ZPeNWLhg5E6U4m997uzdEZlkXnE0LQQgmqyHPREM3InsXPCDabTWKspx9qZR6le0x3e8unVGWrK5jPL5wkejfqPollapUHj2rFrHywX8wxGS5sZdC9Lu5irQA1swMi5W7u1ro0AaOHnLONPBWXbqM4jxGxMTiAnsWh-cz_TrCUFsHtn9I5NOMP5lFyf1qxQGFoTHjJ4PYoKYwaYV2Z5uZCKacva9DsBBxT6BIaUWpT9DkLKsFeCs"/>
+<div class="p-6">
+<h3 class="text-2xl font-semibold text-gray-800 mb-2">Personal Portfolio Website</h3>
+<p class="text-gray-700 leading-relaxed mb-4">This very website! Designed and developed to showcase my skills and projects. Built with HTML, Tailwind CSS, and a touch of JavaScript for interactivity.</p>
+<a class="inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300" href="#">View Source</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white" id="links">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Links</h2>
+<div class="max-w-lg mx-auto">
+<a class="flex items-center bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 mb-6" href="#">
+<span class="material-icons text-4xl text-gray-700 mr-6">link</span>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">GitHub Profile</h3>
+<p class="text-gray-600">Explore my open-source projects and contributions.</p>
+</div>
+</a>
+<a class="flex items-center bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 mb-6" href="#">
+<span class="material-icons text-4xl text-blue-700 mr-6">business_center</span>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">LinkedIn Profile</h3>
+<p class="text-gray-600">Connect with me professionally and view my career history.</p>
+</div>
+</a>
+<a class="flex items-center bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" href="#">
+<span class="material-icons text-4xl text-light-blue-500 mr-6">article</span>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">Blog / Medium</h3>
+<p class="text-gray-600">Read my articles on software development and technology.</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section class="py-16 bg-gray-50" id="contact">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Contact Me</h2>
+<div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+<p class="text-gray-700 text-lg text-center mb-8">
+                        I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions. Feel free to reach out!
+                    </p>
+<form>
+<div class="mb-6">
+<label class="block text-gray-700 font-medium mb-2" for="name">Full Name</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300" id="name" name="name" placeholder="Your Name" type="text"/>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 font-medium mb-2" for="email">Email Address</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300" id="email" name="email" placeholder="your.email@example.com" type="email"/>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 font-medium mb-2" for="message">Message</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300" id="message" name="message" placeholder="Your message..." rows="5"></textarea>
+</div>
+<div class="text-center">
+<button class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105" type="submit">
+                                Send Message
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white" id="other">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Other Information</h2>
+<div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+<div class="flex items-start mb-6">
+<span class="material-icons text-3xl text-green-600 mr-4 mt-1">emoji_events</span>
+<div>
+<h3 class="text-2xl font-semibold text-gray-800 mb-1">Awards &amp; Recognitions</h3>
+<ul class="list-disc list-inside text-gray-700 leading-relaxed">
+<li>Dean's List - UC Berkeley (2018, 2019, 2020)</li>
+<li>Best Overall Project - Cal Hacks V (2019)</li>
+<li>Google Cloud Certified - Professional Cloud Architect (2023)</li>
+</ul>
+</div>
+</div>
+<div class="flex items-start">
+<span class="material-icons text-3xl text-amber-600 mr-4 mt-1">interests</span>
+<div>
+<h3 class="text-2xl font-semibold text-gray-800 mb-1">Interests &amp; Hobbies</h3>
+<p class="text-gray-700 leading-relaxed">
+                                Beyond the world of code, I am an avid hiker and photographer, always seeking new landscapes to explore. I also enjoy playing the guitar, experimenting with electronic music production, and volunteering at local animal shelters. I believe that diverse interests enrich creativity and problem-solving skills.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-800 text-white py-12">
+<div class="container mx-auto px-6 text-center">
+<p>© 2025 VivitaSol. All rights reserved.</p>
+<p class="mt-2">Designed with <span class="material-icons text-sm text-red-500 align-middle">favorite</span> using Tailwind CSS</p>
+</div>
+</footer>
+
+</body></html>
